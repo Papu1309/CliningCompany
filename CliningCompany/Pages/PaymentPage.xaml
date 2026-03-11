@@ -1,0 +1,61 @@
+﻿<Page x:Class="CliningCompany.Pages.PaymentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Оплата" Background="LightGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Оформление заказа" FontSize="18" FontWeight="Bold" Margin="10"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Выбранная услуга: " VerticalAlignment="Center"/>
+            <TextBlock x:Name="txtServiceName" FontWeight="Bold" VerticalAlignment="Center"/>
+            <TextBlock Text=" | Цена: " Margin="20,0,0,0" VerticalAlignment="Center"/>
+            <TextBlock x:Name="txtServicePrice" FontWeight="Bold" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <GroupBox Grid.Row="2" Header="Способ оплаты" Margin="10">
+            <StackPanel>
+                <RadioButton x:Name="rbCard" Content="Картой" GroupName="Payment" Margin="5" IsChecked="True"/>
+                <RadioButton x:Name="rbCash" Content="Наличными" GroupName="Payment" Margin="5"/>
+            </StackPanel>
+        </GroupBox>
+
+        <Border Grid.Row="3" x:Name="CardDetailsPanel" Margin="10" Padding="10" BorderBrush="Gray" BorderThickness="1">
+            <StackPanel>
+                <TextBlock Text="Данные карты" FontWeight="Bold" Margin="0,0,0,10"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Номер карты:" Margin="5" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtCardNumber" Grid.Row="0" Grid.Column="1" Margin="5" MaxLength="19"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Срок (ММ/ГГ):" Margin="5" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtExpiry" Grid.Row="1" Grid.Column="1" Margin="5" MaxLength="5"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="CVV:" Margin="5" VerticalAlignment="Center"/>
+                    <PasswordBox x:Name="txtCVV" Grid.Row="2" Grid.Column="1" Margin="5" MaxLength="3"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button x:Name="btnPay" Content="Оплатить" Width="120" Height="35" Margin="10" Click="btnPay_Click"/>
+            <Button x:Name="btnBack" Content="Назад" Width="120" Height="35" Margin="10" Click="btnBack_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
