@@ -24,10 +24,8 @@ namespace CliningCompany.Pages
         {
             try
             {
-                // Проверяем, что элемент управления уже создан
                 if (lvOrders == null)
                 {
-                    // Если нет, пробуем снова после завершения загрузки
                     Dispatcher.BeginInvoke(new Action(() => LoadOrders(statusFilter)));
                     return;
                 }

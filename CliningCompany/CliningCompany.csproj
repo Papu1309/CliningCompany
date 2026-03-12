@@ -243,6 +243,7 @@
       <DependentUpon>Clining.edmx</DependentUpon>
       <LastGenOutput>Clining.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\55555.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

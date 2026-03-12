@@ -12,13 +12,11 @@
 
         <TextBlock Grid.Row="0" Text="Доступные услуги" FontSize="18" FontWeight="Bold" Margin="10"/>
 
-        <!-- Поиск по названию -->
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
             <TextBlock Text="Поиск:" VerticalAlignment="Center" Margin="0,0,5,0"/>
             <TextBox x:Name="txtSearch" Width="200" Padding="3" TextChanged="txtSearch_TextChanged"/>
         </StackPanel>
 
-        <!-- Список услуг с категориями -->
         <ListView x:Name="lvServices" Grid.Row="2" Margin="10" SelectionMode="Single">
             <ListView.View>
                 <GridView>

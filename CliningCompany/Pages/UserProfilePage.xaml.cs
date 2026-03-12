@@ -40,7 +40,7 @@ namespace CliningCompany.Pages
             var user = Connection.entities.Users.Find(AppState.CurrentUser.Id);
             user.Password = newPass;
             Connection.entities.SaveChanges();
-            AppState.CurrentUser.Password = newPass; // обновим в памяти
+            AppState.CurrentUser.Password = newPass; 
 
             MessageBox.Show("Пароль успешно изменён!");
             txtNewPassword.Password = "";

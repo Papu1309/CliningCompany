@@ -14,7 +14,7 @@ namespace CliningCompany.Pages
         {
             InitializeComponent();
             _orderId = orderId;
-            cmbRating.SelectedIndex = 4; // по умолчанию 5
+            cmbRating.SelectedIndex = 4; 
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -28,7 +28,6 @@ namespace CliningCompany.Pages
             int rating = int.Parse((cmbRating.SelectedItem as ComboBoxItem).Content.ToString());
             string comment = txtComment.Text.Trim();
 
-            // Проверим, не оставлял ли уже отзыв
             var existing = Connection.entities.Reviews.FirstOrDefault(r => r.OrderId == _orderId);
             if (existing != null)
             {

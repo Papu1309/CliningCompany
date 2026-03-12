@@ -32,6 +32,11 @@ namespace CliningCompany.Pages
                 string expiry = txtExpiry.Text.Trim();
                 string cvv = txtCVV.Password.Trim();
 
+                if (cardNumber.Length > 16)
+                {
+                    MessageBox.Show("Номер карты не может быть больше 16 цифр!");
+                    return;
+                }
                 if (!Regex.IsMatch(cardNumber, @"^\d{16}$"))
                 {
                     MessageBox.Show("Номер карты должен содержать 16 цифр!");

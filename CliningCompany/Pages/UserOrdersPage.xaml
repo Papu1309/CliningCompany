@@ -22,19 +22,17 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Дата заказа" DisplayMemberBinding="{Binding OrderDate}" Width="150"/>
-                    <GridViewColumn Header="Адрес самовывоза" DisplayMemberBinding="{Binding PickupAddress}" Width="250"/>
+                    <GridViewColumn Header="Адрес самовывоза" DisplayMemberBinding="{Binding PickupAddress}" Width="320"/>
                     <GridViewColumn Header="Время получения" DisplayMemberBinding="{Binding PickupTime}" Width="150"/>
-                    <GridViewColumn Header="Способ оплаты" DisplayMemberBinding="{Binding PaymentMethod}" Width="100"/>
-                    <GridViewColumn Header="Статус" Width="100">
+                    <GridViewColumn Header="Способ оплаты" DisplayMemberBinding="{Binding PaymentMethod}" Width="110"/>
+                    <GridViewColumn Header="Статус" Width="140">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding Status}" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                                    <!-- Кнопка отмены, если статус 'paid' -->
                                     <Button Content="Отменить" Width="60" Height="20" FontSize="10" 
                                             Visibility="{Binding Status, Converter={StaticResource StatusToVisibilityConverter}, ConverterParameter=paid}"
                                             Click="CancelOrder_Click" Tag="{Binding Id}"/>
-                                    <!-- Кнопка отзыва, если статус 'completed' и нет отзыва -->
                                     <Button Content="Отзыв" Width="60" Height="20" FontSize="10" 
                                             Visibility="{Binding Status, Converter={StaticResource StatusToVisibilityConverter}, ConverterParameter=completed}"
                                             Click="AddReview_Click" Tag="{Binding Id}"/>

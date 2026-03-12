@@ -12,7 +12,6 @@
 
         <TextBlock Grid.Row="0" Text="Все заказы" FontSize="16" Margin="5"/>
 
-        <!-- Фильтр по статусу -->
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5">
             <TextBlock Text="Фильтр по статусу:" VerticalAlignment="Center" Margin="0,0,5,0"/>
             <ComboBox x:Name="cmbStatusFilter" Width="120" SelectionChanged="cmbStatusFilter_SelectionChanged">
@@ -34,18 +33,18 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Услуга" Width="150">
+                    <GridViewColumn Header="Услуга" Width="220">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Services.Name}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Дата заказа" DisplayMemberBinding="{Binding OrderDate}" Width="120"/>
-                    <GridViewColumn Header="Адрес" DisplayMemberBinding="{Binding PickupAddress}" Width="200"/>
-                    <GridViewColumn Header="Время получения" DisplayMemberBinding="{Binding PickupTime}" Width="120"/>
+                    <GridViewColumn Header="Дата заказа" DisplayMemberBinding="{Binding OrderDate}" Width="150"/>
+                    <GridViewColumn Header="Адрес" DisplayMemberBinding="{Binding PickupAddress}" Width="270"/>
+                    <GridViewColumn Header="Время получения" DisplayMemberBinding="{Binding PickupTime}" Width="150"/>
                     <GridViewColumn Header="Оплата" DisplayMemberBinding="{Binding PaymentMethod}" Width="80"/>
-                    <GridViewColumn Header="Статус" Width="100">
+                    <GridViewColumn Header="Статус" Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">

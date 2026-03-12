@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using CliningCompany.Connect;
-using System.Data.Entity; // для Include
+using System.Data.Entity; 
 
 namespace CliningCompany.Pages
 {
