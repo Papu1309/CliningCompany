@@ -63,7 +63,7 @@ namespace CliningCompany.Pages
                 Status = "paid"
             };
 
-            order.PickupAddress = "г. Москва, ул. Клининговая, д. 1, офис 101";
+            order.PickupAddress = "Просьба позвонить по номеру +79391234567 для согласования место встречи с бригадой";
             DateTime pickup = DateTime.Now.AddHours(2);
             if (pickup.Hour < 9) pickup = pickup.Date.AddHours(9);
             if (pickup.Hour > 20) pickup = pickup.Date.AddDays(1).AddHours(9);
@@ -72,7 +72,7 @@ namespace CliningCompany.Pages
             Connection.entities.Orders.Add(order);
             Connection.entities.SaveChanges();
 
-            MessageBox.Show($"Заказ оформлен!\nАдрес самовывоза: {order.PickupAddress}\nВремя: {order.PickupTime:dd.MM.yyyy HH:mm}",
+            MessageBox.Show($"Заказ оформлен!\nАдрес : {order.PickupAddress}\nВремя: {order.PickupTime:dd.MM.yyyy HH:mm}",
                             "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
 
             NavigationService.Navigate(new UserMainPage());
